@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Profile</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+        .uc-profile,
+        .uc-profile2,
+        .personality,
+        .star-chart {
+            display: none;
+        }
+        
+        @media print {
+            @page {
+                size: 7in 9.91in;
+                margin: 0;
+            }
+            body .container {
+                margin-bottom: 0px;
+            }
+        }
+    </style>
+    <script>
+        async function recursive(data) {
+            result = [];
+            data.forEach(k => {
+                var va = k.split('');
+                var val = +va[0] + +va[1];
+                if (val > 9) {
+                    var v = val.toString().split('');
+                    var res = +v[0] + +v[1];
+                    result.push(res + '');
+                } else {
+                    result.push(val + '');
+                }
+            });
+            return await result;
+        }
+
+        $(document).ready(async function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            $('.name').text(urlParams.get('name'));
+            var dob = urlParams.get('dob');
+            $('.dob').text(dob);
+            $('.currenttime').text(new Date().toUTCString());
+
+            var day = dob.split('-');
+            var day = [day[0], day[1], day[2].substring(0, 2), day[2].substring(2, 4)];
+            $('.dd').text(day[0]);
+            $('.mm').text(day[1]);
+            $('.yy1').text(day[2]);
+            $('.yy2').text(day[3]);
+
+            console.log("day" + day);
+
+            var a = day;
+            var b = c = d = f = g = h = [];
+            b = await recursive(a);
+            c = await recursive([b[0] + b[1], b[2] + b[3]]);
+            d = await recursive([b[0] + c[0], b[1] + c[0], c[0] + c[1], b[2] + c[1], b[3] + c[1]]);
+
+            e = await recursive([c[1] + d[2], c[0] + d[2]]);
+            f = await recursive([e[0] + e[1]]);
+            g = await recursive([e[1] + f[0], e[0] + f[0]]);
+            h = await recursive([g[0] + g[1]]);
+
+            $('.r11').text(b[0]);
+            $('.r12').text(b[1]);
+            $('.r13').text(b[2]);
+            $('.r14').text(b[3]);
+
+            $('.r21').text(c[0]);
+            $('.r22').text(c[1]);
+
+            $('.r31').text(d[0]);
+            $('.r32').text(d[1]);
+            $('.r33').text(d[2]);
+            $('.r34').text(d[3]);
+            $('.r35').text(d[4]);
+
+            $('.r36').text(d[5]);
+            $('.r37').text(d[6]);
+
+            $('.r41').text(e[0]);
+            $('.r42').text(e[1]);
+
+            $('.r51').text(f[0]);
+
+            $('.r61').text(g[0]);
+            $('.r62').text(g[1]);
+
+            $('.r71').text(h[0]);
+
+            $('.uc').text(d[4]);
+
+            $('.uc-profile-' + d[4] + ', .uc-' + d[4] + '-personality, .star' + d[4]).show();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container container1">
+        <section class="academy-content">
+            <h3>UCMHP Profiling sheet</h3>
+            <h3>Introductory report</h3>
+            <h3>for <span class="name"></span></h3>
+            <h3>Date of Birth - <span class="dob"></span></h3>
+            <h3>created on <span class="currenttime"></span></h3>
+        </section>
+        <img src="images/Background1.png" alt="bckgound" class="bg">
+    </div>
+    <div class="container container6">
+        <div class="academy-details academy-details-chart">
+            <section class="logo">
+                <img src="images/logo.png" alt="logo" class="academy-logo">
+            </section>
+            <section class="content">
+                <h3>Your Personal UCMHP Profiling Chart</h3>
+                <div class="row">
+                    <div class="chart-date-list">
+                        <div class="chart-date">
+                            <div class="row">
+                                <span class>DD</span>
+                                <span class>MM</span>
+                                <span class>YY</span>
+                                <span class>YY</span>
+                            </div>
+                            <div class="row">
+                                <span class="dd">16</span>
+                                <span class="mm">09</span>
+                                <span class="yy1">19</span>
+                                <span class="yy2">23</span>
+                            </div>
+                        </div>
+                        <div class="chart-numbers">
+                            <div class="divider divider1">
+                                <hr />
+                            </div>
+                            <div class="divider divider2">
+                                <hr />
+                            </div>
+                            <div class="row">
+                                <div class="circle">
+                                    <div class="r11">7</div>
+                                </div>
+                                <div class="circle">
+                                    <div class="r12">9</div>
+                                </div>
+                                <div class="circle">
+                                    <div class="r13">1</div>
+                                </div>
+                                <div class="circle">
+                                    <div class="r14">5</div>
+                                </div>
+                            </div>
+                            <div class="row middle-one">
+                                <div class="circle">
+                                    <div class="r21">7</div>
+                                </div>
+                                <div class="circle">
+                                    <div class="r22">6</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="circle square left">
+                                    <div class="r31">3</div>
+                                </div>
+                                <div class="circle square right">
+                                    <div class="r32">9</div>
+                                </div>
+                                <div class="circle">
+                                    <div class="r33">5</div>
+                                </div>
+                                <div class="circle">
+                                    <div class="r34">7</div>
+                                </div>
+                                <div class="circle active">
+                                    <div class="r35">4</div>
+                                </div>
+                                <div class="circle">
+                                    <div class="r36">7</div>
+                                </div>
+                                <div class="circle">
+                                    <div class="r37">2</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <hr />
+                            </div>
+                            <div class="row">
+                                <div class="circle">
+                                    <div>1</div>
+                                </div>
+                                <div class="circle">
+                                    <div>2</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="circle square">
+                                    <div>3</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="circle">
+                                    <div>5</div>
+                                </div>
+                                <div class="circle">
+                                    <div>4</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="circle square">
+                                    <div>9</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="chart-list">
+                            <div class="row">
+                                <div class="col-10"><span>Destiny trait</span></div>
+                                <div class="col-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-10"><span>Universal Character Trait</span></div>
+                                <div class="col-2 text-center"><span class="uc profile"></span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-10"><span>Personality EQ Strength Trait</span></div>
+                                <div class="col-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-10"><span>Personality EQ Weakness Trait</span></div>
+                                <div class="col-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-10"><span>Whole Life Inborn Strength Trait</span></div>
+                                <div class="col-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-10"><span>Whole Life Inborn Challenge Trait</span></div>
+                                <div class="col-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-10"><span>Intuition Trait</span></div>
+                                <div class="col-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-10"><span>Hidden potential trait</span></div>
+                                <div class="col-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="images/Report/uc1_star.jpg" alt="star" class="star-chart star1" />
+                    <img src="images/Report/uc2_star.jpg" alt="star" class="star-chart star2" />
+                    <img src="images/Report/uc3_star.jpg" alt="star" class="star-chart star3" />
+                    <img src="images/Report/uc4_star.jpg" alt="star" class="star-chart star4" />
+                    <img src="images/Report/uc5_star.jpg" alt="star" class="star-chart star5" />
+                    <img src="images/Report/uc6_star.jpg" alt="star" class="star-chart star6" />
+                    <img src="images/Report/uc7_star.jpg" alt="star" class="star-chart star7" />
+                    <img src="images/Report/uc8_star.jpg" alt="star" class="star-chart star8" />
+                    <img src="images/Report/uc9_star.jpg" alt="star" class="star-chart star9" />
+                </div>
+            </section>
+            <section class="footer">
+                <img src="images/logo.png" alt="logo" class="academy-logo">
+                <p>© Copyright 2018 UCMHP Academy Pte Ltd | All Rights Reserved</p>
+            </section>
+        </div>
+        <img src="images/Background2.png" alt="bckgound" class="bg">
+    </div>
+    <div class="container container2">
+        <div class="academy-details">
+            <section class="logo">
+                <img src="images/logo.png" alt="logo" class="academy-logo">
+            </section>
+            <section class="content">
+                <div class="col-12 text-center uc-profile uc-profile-1">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <div>
+                        <p>
+                            Born an extrovert leader, a director. Physically, a UCM type 1 is good looking with a charismatic personality and lots of feelings and emotions. Inherently, a born leader who is persistent and can connect with others, commands authority and guided by
+                            a spirit of righteousness. </p>
+                        <p> UCM type 1 have a tendency to be compassionate, sympathetic, kind, affectionate, friendly, and cooperative. Suspicious and antagonistic is not in their nature. Other traits will include trustworthiness, altruism, modesty, tender-mindedness
+                            and straightforwardness and will thus attract backstabbers. </p>
+
+                        <p>UCM Type 1 is that he is a master of wisdom, and has a flair in acquiring wisdom, he likes to explore new venture and always want to be first in whatever they do. </p>
+                        <p>UCM Type 1 also has strong analytical powers and is a person who goes into detail on all matters and also possesses strong creativity. Keep in mind that such creativeness and mindfulness when activated, leads to success for the
+                            person. They are likely to be married after age of 28 and are charismatic and good looking. If they have digestive problem, they are likely to be overweight.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-12 text-center uc-profile uc-profile-2">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <p>
+                        Born an extrovert strategist and a good communicator, type 2 tends to have more conventional, traditional interests. They are plain, and straightforward, rather than complex, ambiguous, and subtle. They make a living through the verbal medium. </p>
+                    <p>They are gifted with the gift of the gap and excel in verbal communication. They usually make very good sales personnel and can sing very well if they choose to do so, they may regard the arts and sciences with caution or even view
+                        these endeavors as uninteresting. Usually they are skillful with a pleasant personality but emotional, thus if they are upsets, they can cry a lot. They are friendly with a calm disposition.
+                    </p>
+                    <p>Type 2 is a stickler for tidiness and very fastidious about hygiene. A very hardworking person and mature in thought. They have a tendency to mix with the older generation. He listens to what others have to say but may not follow the
+                        advice given. Given a task, this person has the ability to direct and complete with success. This person is usually good in P.R. work. </p>
+                    <p>Achievement in life comes to them only after the age of 45 years of age. The other bad side would be the person attracts a lot of 'bad mouthing' because this person loves to carry tales, cannot keep secret and a very stubborn person
+                        at times.
+                    </p>
+
+                </div>
+                <div class="col-12 text-center uc-profile uc-profile-3">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <p>
+                        Born an extrovert individual, a happy go lucky person, UCM TYPE 3 are a very good listener and are active, loves sports, forward looking and very clear focused person who knows exactly what they want out of life. They are able to differentiate the good
+                        and the bad and have inherent ability and talent.
+                    </p>
+                    <p> UCM Type 3 is characterized by positive emotions, a sense of urgency, and a tendency to seek out stimulation and the company of others. Their special trait is marked by pronounced engagement with the external world. They naturally
+                        enjoy being with people, and are often perceived as highly energetic and tend to be enthusiastic. They are action-oriented individuals with a “Yes!" or "Let's go!" attitude pertaining to opportunities for excitement. In groups
+                        they like to talk, assert themselves, and draw attention to themselves and be the livewire of the party. They have the ability to be rich and prosperous. The negative side would be aggressiveness, impatience, have a quick but short
+                        temper and is likely to marry at a young age (below 28 years old).
+                    </p>
+                    <p> They are likely very good looking during their younger days and are likely to be overweight later in their live because majority of them are meat eater and are likely to suffer from digestive and heart problem. This person can take
+                        things lightly and may not be firmly grounded. They also tend to be mischievous at times. Their speech can be blunt and there are ups and downs in a relationship. If such relationships are not handled well, it may have a disastrous
+                        effect.
+                    </p>
+
+                </div>
+                <div class="col-12 text-center uc-profile uc-profile-4">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <p>
+                        UCMHP type 4, are born as extroverted leaders and learned individuals. They have in-born leadership qualities, everything they do is always based on laws and directives. They usually excel in exams. They are meticulous, calculative, systematic and able
+                        to start system for people to follow.
+                    </p>
+                    <p>They are independent and trustworthy where work is concerned and are generally easy to get along in general. Compassionate and charismatic, they are out going and love to travel. They usually lead a carefree lifestyle. They are capable
+                        people from a very young age and are street smart as well. If the person is a lady, she is the "pampering" type, and good in public relations with a friendly disposition. This person bounces back fast after she encounter any type
+                        of failure in life.
+                    </p>
+                    <p> A UCMHP type 4 is weak in accumulating wealth and has to be caution in relationships or marriage, otherwise it may result in awkward situations. They usually keep a very low profile about their personal life and are discreet unless
+                        the person they are talking to is a very close friend. They are either good cooks and/or love eating good food and are usually very hands-on people.
+                    </p>
+                    <p> They like to look nice and are very systematic in whatever they do. Always a perfectionist at work and are very thorough with facts, figures and logic. They usually are knowledgeable and know what they are talking about. UCMHP type
+                        4 enjoys singing their own praises and like to listen to only good things about themselves.
+                    </p>
+
+                </div>
+                <div class="col-12 text-center uc-profile uc-profile-5">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <p>
+                        UCMHP type 5 is a born builder or architect of any organization, they behave more than a leader, and they are born in between an extrovert and an introvert. They may be very unpredictable and extreme in nature in terms of personality and character. They
+                        can either be the best or the worst in whatever they are into.
+                    </p>
+                    <p>They have a very strong character, born with strong leadership, more than a commander who strongly believes in his/her own principle. They are highly unlikely to stay as a clerk or perform administrative work. Although charismatic
+                        and blends well with people, they observe tradition as well. Hence, they are usually in a position above many. If their weakness is also a type 5, they may not bother about traditions.
+                    </p>
+                    <p> A UCMHP type 5 has a strong instinct. He/she is very vocal and arrogant when they speak but soft hearted at times. For men they are usually stout physically (80%), as for women, they are usually petite, only 20% of men or women are
+                        medium build. They are very hardworking and will achieve success in the later part of their life. The individual is also a realistic person and firm in his/her believes, and he/she is not a dreamer.
+                    </p>
+                    <p> If this UCMHP type 5 belongs to the lower strata and is poorer then this person is stubborn and hard-headed. If this happens, this UCMHP type 5 should relax and not nit picks on small issues. If relaxed on issues pertaining to principles
+                        and eradicate stubbornness, this person is will be respected by all.
+                    </p>
+
+                </div>
+                <div class="col-12 text-center uc-profile uc-profile-6">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <p>
+                        Born as an emotional and introvert leader, a UCMHP type 6 individual has an optimistic view of human nature in generally and they belong to the corporate world. They believe people are basically honest, decent, and trustworthy. A UCMHP type 6 has the
+                        tendency to be compassionate, cooperative with others and will take care of the people working as their subordinates
+                    </p>
+                    <p> Their traits reflect individual differences for social harmony. As individuals, they generally get along well with others. The UCMHP type 6 is interested in people, they feel for others. They are generally soft hearted and make people
+                        feel at ease. They sympathize with others and will have high tendency to take time out for others. They are also interested in other people’s problems.
+                    </p>
+                    <p> They have concern for others, and are not likely to insult people. UCMHP type 6, is also a survival number, it controls wealth and prosperity and they will excel in the corporate world. Well mannered, charismatic and has high taste
+                        in life. They will do well in industries such as education, artistic works and religion.
+                    </p>
+
+                </div>
+                <div class="col-12 text-center uc-profile uc-profile-7">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <p>
+                        Born as an introvert entrepreneur, opportunist and innovator, a UCMHP type 7, is a very skilful person and have a high tendency to go into details when handling matters. This person never forgets those who have helped them before. The UCMHP type 7 appreciates
+                        gratitude and is a person full of passion and love.</p>
+                    <p> UCMHP type 7 people are a good communicator but argumentative at times and they know how to sway the topic and has a lot to say. They are able to twist and turn their way around especially with words. They tend to attract a lot of
+                        ‘bad mouthing’. They are also interested to go after fame and fortune.</p>
+                    <p> They are very good learners and is likely to start their own business and compete with their previous employers for projects and businesses. However, they can be very fickle minded, and they can change a decision very easily and quickly,
+                        often overnight. They tend to be not firm with their relationship with people which may lead to problems in marriage.
+                    </p>
+
+                </div>
+                <div class="col-12 text-center uc-profile uc-profile-8">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <p>
+                        Born as an introvert with a strong career mind and responsible in her work. The UCMHP type 8 is also usually very quiet. They tend to choose only to talk to those people who they are comfortable with. They are generally conservative and passive in nature,
+                        but a lively person among their friends.
+                    </p>
+                    <p>They are family oriented, very responsible, full of righteousness ideology and a trustworthy person as a friend. UCMHP type 8 feels comfortable to be where they are and they are unlikely to play a leading role in their organization
+                        or work place.
+                    </p>
+                    <p> On the outside, the UCMHP type 8 looks tough but on the inside, the UCMHP type 8 is actually a soft hearted individual. As UCMHP type 8 individuals tend to be more careful and believe strongly in their own perspective, it unconsciously
+                        leads to loss of opportunities.
+                    </p>
+
+                </div>
+                <div class="col-12 text-center uc-profile uc-profile-9">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <p>
+                        Born as an introvert who belongs to the high society, UCMHP type 9, is very visual, optimistic and open minded. They also love to look nice and are very civilized, intelligent, cultured and sensitive. They know when and how to attack and when and how
+                        to defend.
+                    </p>
+                    <p>Born as an introvert who belongs to the high society, UCMHP type 9, is very visual, optimistic and open minded. They also love to look nice and are very civilized, intelligent, cultured and sensitive. They know when and how to attack
+                        and when and how to defend.
+                    </p>
+                    <p>They are very calculative and believed strongly in their own principles. They have a tendency to make very good consultants. They are gifted with a lot of business idea and opportunities to be wealthy in their life time. They are likely
+                        to have more than two properties throughout their life.
+                    </p>
+                    <p>They will never reinvent the wheels even though they are born to be very creative. They are good at winning one's heart. Do things very quickly and are capable with their work, however, the issues comes when one take a closer look
+                        at the details. They have the tendency to not take good care of their subordinates, but they do get along well with the management.
+                    </p>
+                </div>
+            </section>
+            <section class="footer">
+                <img src="images/logo.png" alt="logo" class="academy-logo">
+                <p>© Copyright 2018 UCMHP Academy Pte Ltd | All Rights Reserved</p>
+            </section>
+        </div>
+        <img src="images/Background2.png" alt="bckgound" class="bg">
+    </div>
+    <div class="container container3">
+        <div class="academy-details">
+            <section class="logo">
+                <img src="images/logo.png" alt="logo" class="academy-logo">
+            </section>
+            <section class="content">
+                <div class="col-12 text-center uc-profile2 uc-profile-1">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <div>
+                        <p>UCM Type 1 individual values getting along with others and is concerned with general social harmony. They are generally considerate, generous, helpful, and willing to compromise their interests for others. They possess an optimistic
+                            view of human nature and will give credits for those who deserve them. They naturally believe people to be basically honest, decent, and trustworthy. This personality type is entertaining in social gatherings and has excellent
+                            interpersonal, influential and public relations skill. Being selfless people, they are interested in other people, feel for others and have a soft heart. They have a unique quality in making people feel at ease, sympathize,
+                            compassionate and empathies. They invest in taking time out for others, and are generally interested in other people’s problems, charitable and with their kind and altruistic demeanor do go out of their way to help people with
+                            love and tenderness in them. </p>
+
+                        <p>Type 1 person, when they put their fingers together, 80% of them have gaps in between their fingers.</p>
+
+                        <p>Seventy percent of their live is not smooth sailing. They are likely to be involved in a few relationship or career or business failures as they cannot focus and lack finishing touches or completion.</p>
+
+                    </div>
+                </div>
+                <div class="col-12 text-center uc-profile2 uc-profile-2">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+
+                    <p>Type 2 people have a general appreciation for art, emotion, adventure, unusual ideas, imagination, and a curiosity for a variety of experiences. Type 2 are very emotional people and they can cry loudly. Type 2 symbolizes 2 matters
+                        or two things (Duality), it can mean 2 matters or things one has to decide, thus, indecisiveness is associates with 2. Another interpretation is usually you think first before you speak. Speech comes second. Thus 2 can be illustrated
+                        as talkative, a good speaker good communicator with the gift of the gap, A good singer, good presenter, good negotiation skills and vocal in most sense of the word and on a lighter note, two partners of the opposite sex are usually
+                        loving and 'soft' with one another. Type 2 is softhearted, can be cheated easily and the number is feminine.
+                    </p>
+                    <p> Type 2 is likely to have two affairs of the heart. It is good for them to be focus in a religion. The trait distinguishes imaginative people from down-to-earth, conventional people. People who are open to experience are intellectually
+                        curious, appreciative of art, and sensitive to beauty. They tend to be, compared to closed people, more creative and more aware of their feelings. They are more likely to hold unconventional beliefs. In their life, they are likely
+                        to be head hunted by their competitors or likely to compete with their previous employer for
+
+                    </p>
+                </div>
+                <div class="col-12 text-center uc-profile2 uc-profile-3">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+
+                    <p>UCM Type 3 is usually talkative, aggressive, unrestrained confident, and socially bold. Being extroverted, their focus involves organization of people, which translates into supervision. Whilst Type Three enjoys organizing and mobilizing
+                        people according to their own theories and tactically based agendas, they are content to enforce "the rules," often dictated by tradition or handed down from a higher authority."
+                    </p>
+                    <p>UCM Type 3 is the life of the party they don't mind being the center of attention, feel comfortable around people. They have a tendency to start conversations and talk to a lot of different people at all levels from all walks of life
+                        and intermingle well at parties. 80% of type 3 person are meat eater and loved fried food. Type 3 has the tendency to seek out the company and is stimulated by others. Their trait is marked by pronounced engagement with the external
+                        world. They tend to be enthusiastic, action-oriented people and love excitement. In groups they enjoy talking and draw attention to themselves.
+
+                    </p>
+
+                </div>
+                <div class="col-12 text-center uc-profile2 uc-profile-4">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+
+                    <p>They are task oriented and are able to work independently and are always law abiding. If you accuse them of something without facts or figure, they will not hesitate to retaliate. They are usually good presenters and usually have a
+                        loud voice. As a UCMHP type 4 person, when they put their fingers together, 80% of them have gaps in between their fingers.
+                    </p>
+                    <p> They tend to protect the interest of the company and can get along very well with their bosses. They also have the tendency to show self-discipline, act dutifully, and aim for achievement. This trait shows a preference for planned
+                        rather than spontaneous behavior. They achieve high levels of success through purposeful planning and persistence. They are also regarded by their peers as responsible and reliable. They can become compulsive perfectionists and
+                        workaholics.
+                    </p>
+                    <p>They prefer to only just report to only one person. A very realistic person, calculative and very focused in their line of work. They are aware of their strengths and weaknesses very well. Whatever they do, they will want to know their
+                        benefit first before carrying out a task.
+                    </p>
+                    <p>A UCMHP type 4 is a person who is more conscientious and plans their work and practices self-discipline and will be more likely to succeed. These people are focused and are aware of the work that needs to get done and do it on time
+                        and in an efficient manner. Teachers would generally describe UCMHP type 4 students as responsible students. Their main weakness is they cannot accept defeat of any type.
+
+                    </p>
+
+                </div>
+                <div class="col-12 text-center uc-profile2 uc-profile-5">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+
+                    <p>There is a tendency to experience unpleasant and negative emotions easily, such as anger, anxiety, depression or impulsiveness. They are also more emotionally reactive and vulnerable to stress. It is sometimes called emotional instability
+                        by some. They are more likely to interpret ordinary situations as threatening, and minor frustrations as hopelessly difficult. Their negative emotional reactions tend to persist for unusually long periods of time, which means they
+                        can often be in a bad mood for a long time. Due to the issues in emotional instability they can be hampered on the ability to think clearly, make decisions, and cope effectively with stress.
+                    </p>
+                    <p>UCMHP type 5, are easily disturbed, change their mood a lot get irritated easily, and get stressed out easily. They have frequent mood swings, often feel blue, worry about things and are not relaxed most of the time. In a learning
+                        environment, a UCMHP type 5 people have a harder time adjusting to stressful situations. When presented with a difficult situation or a problem that they don't know how to figure the way out. They may just break down rather than
+                        handling the situation.
+                    </p>
+                    <p>They also get angry easily and yet they may not even know what they are angry about and it could be targeted at, themselves, the homework, the teacher, etc. A UCMHP type 5 may experience a rush of energy that some may consider the
+                        optimal state. They have the tendency to push themselves hard to reach goals of all types, and UCMHP type 5 people will expect others to do the same. However, one must learn to restrain the interest in order to get the maximum
+                        results for the efforts. They generally cannot accept big failures in life and will find it difficult to make a comeback. If they are involved in gambling or drugs, they will find it very hard to kick the habits.
+
+                    </p>
+
+                </div>
+                <div class="col-12 text-center uc-profile2 uc-profile-6">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+
+                    <p>A UCMHP type 6 can be a popular figure in society. The negative side is that they are proud in nature and usually does not take on simple tasks. They do not like to listen to others especially their superiors, but they are likely to
+                        look after their subordinates. A UCMHP type 6 have traits such as sympathetic, kind, affectionate, trustworthy, straightforward, compliance, and modest.
+                    </p>
+                    <p> A UCMHP type 6 prefers to be friendly, and cooperative rather than being suspicious and antagonistic towards others. They are usually willing to compromise their interests for the benefit of others. They are family oriented. If the
+                        UCMHP type 6 is a woman, they are very clear with their accounts and they tend to want to be in control over others.
+                    </p>
+                    <p> As for men, they tend to unclear in their personal accounts. Both genders love to look nice, love money and likely to go for branded products. They are usually good looking and charismatic even into their older ages, they will attract
+                        the opposite sex a lot. If your daughter is a UCMHP type 6, they usually can be very naïve, easy going and can be cheated by sweet words and promises, so train them to be more street smart.
+
+                    </p>
+
+                </div>
+                <div class="col-12 text-center uc-profile2 uc-profile-7">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+
+                    <p>A UCMHP type 7 is very domineering and always prefer to have bigger share in whatever they want to do. They are usually pampered, born as commanders, and will usually hold important positions in their company. They are usually innovative
+                        and are enterprising with whatever they are doing. They are also very good in trouble shooting and is a fantastic problem solver.
+                    </p>
+                    <p> As a dreamer, they tend to get involved in a few businesses or a few types of work at the same time and they can multi task between them. Being an entrepreneur, their energy comes from pushing boundaries and taking things to the next
+                        level. However, they tend to get bored quickly and draw to variety.
+                    </p>
+                    <p> When things are fresh and exciting, they tend to experience a rush of energy that some consider the optimal state of mind. They have a tendency to push themselves hard to reach goals of all types, and they will expect the others to
+                        do the same. A UCMHP type 7 person likes to eat seafood and dislike one particular type of seafood.
+                    </p>
+                    <p>They do have the tendency to perspire easily especially while eating. A UCMHP type 7, when they put their fingers together, 80% of them have gaps in between their fingers. UCMHP type 7 is highly likely to hold unconventional beliefs
+                        and throughout their career life time, they are likely to be head hunted by their competitors or likely to compete with their previous employer for future businesses. Some people might even call them ‘betrayal’.
+                    </p>
+
+                </div>
+                <div class="col-12 text-center uc-profile2 uc-profile-8">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+
+                    <p>UCMHP type 8 men are usually responsible people and they will generally make good husbands. As an introvert, UCMHP type 8 lacks the social exuberance and activity levels of their extrovert counterparts. They tend to seem quiet, low-key,
+                        deliberate, and less involved in the social world.
+                    </p>
+                    <p>Their lack of social involvement should not be interpreted as shyness or depression. They simply need less stimulation than extroverts and more time alone. They may be very active and energetic, but it need not be socially. 80% of
+                        type 8 person are meat-lovers. Although UCMHP type 8 are introverts, they do not mind to be the center of attention at times when they are with people that they know.
+                    </p>
+                    <p> When they start to feel more comfortable around people, and are able to start conversations, with a lots of different people at parties because of their sociable nature. UCMHP type 8 also has the tendency to seek out the company and
+                        stimulation of others.
+
+                    </p>
+
+                </div>
+                <div class="col-12 text-center uc-profile2 uc-profile-9">
+                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <p>
+                        Portrayed as tough man and woman, but they are actually soft hearted and mild tempered. UCMHP type 9 is usually an emotional person, with not many friends, and have the tendency to be lonely in the later part of life. Luck comes during the middle age,
+                        around 35 years old and above.
+                    </p>
+                    <p> UCMHP type 9 has a tendency to show self-discipline, act dutifully, and aim for achievement. There is a preference for planned rather than spontaneous behaviour. They are always competent, organized and a good planner. UCMHP type 9,
+                        is always prepared, follow a schedule, and get chores done right away. They also like to pay attention to details, and they seldom do not leave belongings around and make a mess of things. They are meticulous and always put things
+                        back in their proper place.
+                    </p>
+                    <p>They never compromise on duties. One of the tendencies of UCMHP type 9 is their creativeness, and through their creativity, they can put together ideas and integrate them into one great idea. They are also regarded by others as responsible
+                        and reliable. They have the tendency to become compulsive perfectionists and workaholics.
+                    </p>
+                    <p>UCMHP type 9 are generally focused and aware of the work that needs to get done and will do them in a timely and efficient manner. Teachers would generally describe UCMHP type 9 students as the responsible students. Appearances are
+                        important to them. They like to keep things and love quiet environment. They can be greedy and lonely and they know it.
+                    </p>
+                </div>
+            </section>
+            <section class="footer">
+                <img src="images/logo.png" alt="logo" class="academy-logo">
+                <p>© Copyright 2018 UCMHP Academy Pte Ltd | All Rights Reserved</p>
+            </section>
+        </div>
+        <img src="images/Background2.png" alt="bckgound" class="bg">
+    </div>
+    <div class="container container4">
+        <div class="academy-details">
+            <section class="logo">
+                <img src="images/logo.png" alt="logo" class="academy-logo">
+            </section>
+            <section class="content profile-details">
+                <h3>Your Personal Profile</h3>
+                <br/>
+                <div class="personality uc-1-personality">
+                    <div class="row first">
+                        <div class="col-3">
+                            <img src="images/Report/Washington.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                    George Washington (February 22, 1732[b][c] – December 14, 1799) was an American political leader, military general, statesman, and Founding Father who also served as the first president of the United States from 1789 to 1797. He led Patriot forces to victory in the nation's War of Independence, and he presided at the Constitutional Convention of 1787 which established the new federal government. He has been called the "Father of His Country" for his manifold leadership in the formative days of the new nation.
+                                    </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row second">
+                        <div class="col-3">
+                            <img src="images/Report/Steven.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                        Steven Paul Jobs (/dʒɒbz/; February 24, 1955 – October 5, 2011) was an American business magnate and investor. He was the chairman, chief executive officer (CEO), and co-founder of Apple Inc.; chairman and majority shareholder of Pixar; a member of The Walt Disney Company's board of directors following its acquisition of Pixar; and the founder, chairman, and CEO of NeXT. Jobs is widely recognized as a pioneer of the microcomputer revolution of the 1970s and 1980s, along with Apple co-founder Steve Wozniak.
+                                    </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row third">
+                        <div class="col-3">
+                            <img src="images/Report/Schooling.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                        Joseph Isaac Schooling PJG (born 16 June 1995) is a Singaporean swimmer. He was the gold medallist in the 100m butterfly at the 2016 Olympics, attaining Singapore's first-ever Olympic medal in swimming. His winning time of 50.39 seconds is a National, Asian, and Olympic record.
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="personality uc-2-personality">
+                    <div class="row first">
+                        <div class="col-3">
+                            <img src="images/Report/Adams.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                        John Adams (October 30, 1735[a] – July 4, 1826) was an American statesman, attorney, diplomat, writer, and Founding Father who served as the second president of the United States from 1797 to 1801. Before his presidency he was a leader of the American Revolution that achieved independence from Great Britain, and also served as the first vice president of the United States. Adams was a dedicated diarist and regularly corresponded with many important figures in early American history including his wife and adviser, Abigail, and his letters and other papers are an important source of historical information about the era.
+                                        </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row second">
+                        <div class="col-3">
+                            <img src="images/Report/Siegl.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                        Zev Siegl was born to a Jewish family on December 28, 1942 in Detroit, Michigan.[4], is an American keynote presenter at entrepreneurship conferences and a mentor to entrepreneurs and MBA candidates. He is a Co-Founder of Starbucks Coffee Company and served as an executive with the company during its first decade.
+                                    </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row third">
+                        <div class="col-3">
+                            <img src="images/Report/Nascimento.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                        Edson Arantes do Nascimento (Brazilian Portuguese: [ˈɛtsõ (w)ɐˈɾɐ̃tʃiz du nɐsiˈmẽtu]; born 23 October 1940), known as Pelé ([peˈlɛ]), is a Brazilian retired professional footballer who played as a forward. He is regarded by many in the sport, including football writers, players, and fans, as the greatest player of all time. In 1999, he was voted World Player of the Century by the International Federation of Football History & Statistics (IFFHS), and was one of the two joint winners of the FIFA Player of the Century award. That same year, Pelé was elected Athlete of the Century by the International Olympic Committee. According to the IFFHS, Pelé is the most successful domestic league goal-scorer in football history scoring 650 goals in 694 League matches, and in total 1281 goals in 1363 games, which included unofficial friendlies and is a Guinness World Record. During his playing days, Pelé was for a period the best-paid athlete in the world.
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="personality uc-3-personality">
+                    <div class="row first">
+                        <div class="col-3">
+                            <img src="images/Report/JohnQuincy.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                        John Quincy Adams (/ˈkwɪnzi/ (About this soundlisten);[a] July 11, 1767 – February 23, 1848) was an American statesman, diplomat, lawyer, and diarist who served as the sixth president of the United States from 1825 to 1829. He previously served as the eighth United States Secretary of State from 1817 to 1825. During his long diplomatic and political career, Adams also served as an ambassador, and represented Massachusetts as a United States Senator and as a member of the United States House of Representatives. He was the eldest son of John Adams, who served as the second US president from 1797 to 1801. Initially a Federalist like his father, he won election to the presidency as a member of the Democratic-Republican Party, and in the mid-1830s became affiliated with the Whig Party.
+                                    </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row second">
+                        <div class="col-3">
+                            <img src="images/Report/LiKa-shing.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                        Sir Li Ka-shing GBM KBE JP[3] (born 13 June 1928)[4][5] is a Hong Kong business magnate, investor, and philanthropist. He was born in Chao'an, Chaozhou. As of March 2019, Li is the 28th richest person in the world, with an estimated net wealth of US$32.8 billion.[2] He is the senior advisor for CK Hutchison Holdings[6], after he retired from the Chairman of the Board in May 2018[7]; through it, he is the world's leading port investor, developer, and operator of the largest health and beauty retailer in Asia and Europe.[8]
+                                    </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row third">
+                        <div class="col-3">
+                            <img src="images/Report/MartinaHingis.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                        Martina Hingis (German pronunciation: [marˈtiːna ˈhɪŋɡɪs]; born 30 September 1980) is a Swiss former professional tennis player. She spent a total of 209 weeks as the singles world No. 1 and 90 weeks as doubles world No. 1, holding both No. 1 rankings simultaneously for 29 weeks.[2] She won five Grand Slam singles titles, thirteen Grand Slam women's doubles titles, winning a calendar-year doubles Grand Slam in 1998, and seven Grand Slam mixed doubles titles; for a combined total of twenty-five major titles. In addition, she won the season-ending WTA Finals two times in singles and three times in doubles, and an Olympic silver medal.
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="personality uc-4-personality">
+                    <div class="row first">
+                        <div class="col-3">
+                            <img src="images/Report/Cleveland.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            Stephen Grover Cleveland (March 18, 1837 – June 24, 1908) was an American politician and lawyer who was the 22nd and 24th president of the United States, the only president in American history to serve two non-consecutive terms in office (1885–1889 and 1893–1897).[b] He won the popular vote for three presidential elections—in 1884, 1888, and 1892—and was one of two Democrats (with Woodrow Wilson) to be elected president during the era of Republican political domination dating from 1861 to 1933.
+                                        </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row second">
+                        <div class="col-3">
+                            <img src="images/Report/WilliamHenryGates.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            William Henry Gates III (born October 28, 1955) is an American business magnate, investor, author, philanthropist, and humanitarian. He is best known as the principal founder of Microsoft Corporation.[2][3] During his career at Microsoft, Gates held the positions of chairman, CEO and chief software architect, while also being the largest individual shareholder until May 2014.
+                                        </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row third">
+                        <div class="col-3">
+                            <img src="images/Report/Alexander.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            Sir Alexander Chapman Ferguson CBE (born 31 December 1941) is a Scottish former football manager and player who managed Manchester United from 1986 to 2013. He is considered one of the greatest and most successful managers of all time.
+                                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="personality uc-5-personality">
+                    <div class="row first">
+                        <div class="col-3">
+                            <img src="images/Report/AbrahamLincoln.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            Abraham Lincoln (February 12, 1809 – April 15, 1865) was an American statesman, politician, and lawyer who served as the 16th president of the United States from 1861 until his assassination in April 1865. Lincoln led the nation through the American Civil War, its bloodiest war and its greatest moral, constitutional, and political crisis.[2][3] He preserved the Union, abolished slavery, strengthened the federal government, and modernized the U.S. economy
+                                        </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row second">
+                        <div class="col-3">
+                            <img src="images/Report/Zuckerberg.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            Mark Elliot Zuckerberg (/ˈzʌkərbɜːrɡ/; born May 14, 1984) is an American technology entrepreneur and philanthropist. He is known for co-founding and leading Facebook as its chairman and chief executive officer.[3][4] In 2007 at age 23 he became the world's youngest self-made billionaire. As of 2018, he is the only person under 50 in the Forbes ten richest people list, and the only one under 40 in the Top 20 Billionaires list.[7]
+                                        </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row third">
+                        <div class="col-3">
+                            <img src="images/Report/Agassi.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            Andre Kirk Agassi (/ˈæɡəsi/ AG-ə-see;[2][3] born April 29, 1970) is an American retired professional tennis player and former world No. 1 whose career spanned from the late 1980s to the mid-2000s.[4] Considered by numerous sources to be one of the greatest tennis players of all time,[5][6][7][8][9] Agassi has also been called the greatest service returner ever to play the game and was described by the BBC upon his retirement as "perhaps the biggest worldwide star in the sport's history".[7][9][10][11][12] As a result, he is credited for helping to revive the popularity of tennis during the 1990s.
+                                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="personality uc-6-personality">
+                    <div class="row first">
+                        <div class="col-3">
+                            <img src="images/Report/JamesMadison.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            James Madison Jr. (March 16, 1751[b] – June 28, 1836) was an American statesman, lawyer, diplomat, philosopher, and Founding Father who served as the fourth president of the United States from 1809 to 1817. He is hailed as the "Father of the Constitution" for his pivotal role in drafting and promoting the United States Constitution and the United States Bill of Rights. He also co-wrote The Federalist Papers, co-founded the Democratic-Republican Party, and served as the fifth United States secretary of State from 1801 to 1809.
+                                        </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row second">
+                        <div class="col-3">
+                            <img src="images/Report/WarrenEdwardBuffett.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            Warren Edward Buffett (/ˈbʌfɪt/; born August 30, 1930)[2] is an American business magnate, investor, speaker and philanthropist who serves as the chairman and CEO of Berkshire Hathaway. He is considered one of the most successful investors in the world[3][4] and has a net worth of US$89.9 billion as of May 4, 2019, making him the third-wealthiest person in the world.[5]
+                                        </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row third">
+                        <div class="col-3">
+                            <img src="images/Report/MuhammadAli.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            Muhammad Ali (/ɑːˈliː/;[4] born Cassius Marcellus Clay Jr.;[5] January 17, 1942 – June 3, 2016) was an American professional boxer, activist, and philanthropist. He is nicknamed "The Greatest" and is widely regarded as one of the most significant and celebrated sports figures of the 20th century and as one of the greatest boxers of all time.
+                                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="personality uc-7-personality">
+                    <div class="row first">
+                        <div class="col-3">
+                            <img src="images/Report/JohnFitzgerald.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            John Fitzgerald "Jack" Kennedy (May 29, 1917 – November 22, 1963), often referred to by his initials JFK, was an American politician and journalist who served as the 35th president of the United States from January 1961 until his assassination in November 1963. He served at the height of the Cold War, and the majority of his presidency dealt with managing relations with the Soviet Union. A member of the Democratic Party, Kennedy represented Massachusetts in the U.S. House of Representatives and Senate prior to becoming president.
+                                        </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row second">
+                        <div class="col-3">
+                            <img src="images/Report/Lawrence.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            Lawrence Joseph "Larry" Ellison (born August 17, 1944) is an American businessman, entrepreneur, and philanthropist who is a co-founder and the executive chairman and chief technology officer (CTO) of Oracle Corporation.[4] As of March 2019, he was listed by Forbes magazine as the fourth-wealthiest person in the United States, and as the seventh-wealthiest in the world, with a fortune of $66.1  billion, (increased from $54.5 billion in 2018).[3]
+                                        </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row third">
+                        <div class="col-3">
+                            <img src="images/Report/Lee.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            Lee Jun-fan (Chinese: 李振藩; November 27, 1940 – July 20, 1973), known professionally as Bruce Lee (Chinese: 李小龙), was a Hong Kong-American[3] actor, director, martial artist, martial arts instructor, and philosopher.[4] He was the founder of the hybrid martial arts Jeet Kune Do. Lee was the son of Cantonese opera star Lee Hoi-chuen. He is considered by commentators, critics, media, and other martial artists to be the most influential martial artist[5] and a pop culture icon of the 20th century, who bridged the gap between East and West.[6][7] He is often credited with helping to change the way Asians were presented in American films.[8] 
+                                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="personality uc-8-personality">
+                    <div class="row first">
+                        <div class="col-3">
+                            <img src="images/Report/JamesMonroe.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            James Monroe (/mənˈroʊ/; April 28, 1758 – July 4, 1831) was an American statesman, lawyer, diplomat, and Founding Father who served as the fifth president of the United States from 1817 to 1825. A member of the Democratic-Republican Party, Monroe was the last president of the Virginia dynasty, and his presidency coincided with the Era of Good Feelings. He is perhaps best known for issuing the Monroe Doctrine, a policy of opposing European colonialism in the Americas. He also served as the governor of Virginia, a member of the United States Senate, the U.S. ambassador to France and Britain, the seventh Secretary of State, and the eighth Secretary of War.
+                                        </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row second">
+                        <div class="col-3">
+                            <img src="images/Report/Armstrong.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            Neil Alden Armstrong (August 5, 1930 – August 25, 2012) was an American astronaut and aeronautical engineer who was the first person to walk on the Moon. He was also a naval aviator, test pilot, and university professor.
+                                        </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row third">
+                        <div class="col-3">
+                            <img src="images/Report/IvanLendl.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            Ivan Lendl (Czech pronunciation: [ˈɪvan ˈlɛndl̩]; born March 7, 1960) is a retired Czech-American professional tennis player. He is often considered among the greatest in the sport's history.[2][3] He was the world No. 1 for 270 weeks in the 1980s and finished his career with 94 singles titles. At the majors he won eight titles and was runner-up a record 11 times. He also won seven year-end championships.
+                                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="personality uc-9-personality">
+                    <div class="row first">
+                        <div class="col-3">
+                            <img src="images/Report/JamesEarlCarter.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            James Earl Carter Jr. (born October 1, 1924) is an American politician and philanthropist who served as the 39th president of the United States from 1977 to 1981.[1][2] A Democrat, he previously served as a Georgia state senator from 1963 to 1967 and as the 76th governor of Georgia from 1971 to 1975. After his presidency, Carter has remained active in the private sector; in 2002, he was awarded the Nobel Peace Prize for his work in co-founding the Carter Center.
+                                        </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row second">
+                        <div class="col-3">
+                            <img src="images/Report/Raymond.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            Raymond Albert "Ray" Kroc (October 5, 1902 – January 14, 1984) was an American fast-food tycoon.[4][5] He joined the California company McDonald's in 1954, after the McDonald brothers had franchised 6 locations out from their original 1940 operation in San Bernardino. This set the stage for national expansion with the help of Kroc, eventually leading to a global franchise, making it the most successful fast food corporation in the world. Kroc was included in Time 100: The Most Important People of the Century, and amassed a fortune during his lifetime. He owned the San Diego Padres baseball team from 1974 until his death in 1984.
+                                        </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row third">
+                        <div class="col-3">
+                            <img src="images/Report/ElvisAaron.jpg" alt="logo" class="academy-logo">
+                        </div>
+                        <div class="col-9 text"> <span>
+                                            Elvis Aaron Presley[a] (January 8, 1935 – August 16, 1977), also known mononymously as Elvis, was an American singer and actor. Regarded as one of the most significant cultural icons of the 20th century, he is often referred to as the "King of Rock and Roll" or simply "the King".
+                                        </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="footer">
+                <img src="images/logo.png" alt="logo" class="academy-logo">
+                <p>© Copyright 2018 UCMHP Academy Pte Ltd | All Rights Reserved</p>
+            </section>
+        </div>
+        <img src="images/Background2.png" alt="bckgound" class="bg">
+    </div>
+    <div class="container container5">
+        <div class="academy-details">
+            <section class="logo">
+                <img src="images/logo.png" alt="logo" class="academy-logo">
+            </section>
+            <section class="content contact-details">
+                <h2>Call us today for more information and appointments</h2>
+                <br/>
+                <p>16 Arumugam Road, LTC Building Blk D, #05-02, Singapore 409961</p><br/>
+                <p><span class="glyphicon glyphicon-earphone" aria-hidden="true">Phone: </span>+65 6748 6279</p>
+                <p>cs@ucmhpacademy.com</p>
+                <p>http://www.ucmhpacademy.com/</p>
+            </section>
+            <section class="footer">
+                <img src="images/logo.png" alt="logo" class="academy-logo">
+                <p>© Copyright 2018 UCMHP Academy Pte Ltd | All Rights Reserved</p>
+            </section>
+        </div>
+        <img src="images/Background2.png" alt="bckgound" class="bg">
+    </div>
+</body>
+
+</html>
