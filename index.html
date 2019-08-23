@@ -60,7 +60,7 @@
             $('.yy1').text(day[2]);
             $('.yy2').text(day[3]);
 
-            console.log("day" + day);
+            // console.log("day" + day);
 
             var a = day;
             var b = c = d = f = g = h = [];
@@ -73,6 +73,7 @@
             g = await recursive([e[1] + f[0], e[0] + f[0]]);
             h = await recursive([g[0] + g[1]]);
 
+            // console.log(a + " - " + b + " - " + c + " - " + d + " - " + e + " - " + f + " - " + g + " - " + h);
             $('.r11').text(b[0]);
             $('.r12').text(b[1]);
             $('.r13').text(b[2]);
@@ -87,8 +88,10 @@
             $('.r34').text(d[3]);
             $('.r35').text(d[4]);
 
-            $('.r36').text(d[5]);
-            $('.r37').text(d[6]);
+            var r3l = await recursive([d[0] + d[1]]),
+                r3r = await recursive([d[3] + d[4]]);
+            $('.r3l').text(r3l);
+            $('.r3r').text(r3r);
 
             $('.r41').text(e[0]);
             $('.r42').text(e[1]);
@@ -100,7 +103,7 @@
 
             $('.r71').text(h[0]);
 
-            $('.uc').text(d[4]);
+            $('.uc').text(d[2]);
 
             $('.uc-profile-' + d[4] + ', .uc-' + d[4] + '-personality, .star' + d[4]).show();
         });
@@ -172,25 +175,25 @@
                             </div>
                             <div class="row">
                                 <div class="circle square left">
-                                    <div class="r31">3</div>
+                                    <div class="r3l">3</div>
                                 </div>
                                 <div class="circle square right">
-                                    <div class="r32">9</div>
+                                    <div class="r3r">9</div>
                                 </div>
                                 <div class="circle">
-                                    <div class="r33">5</div>
+                                    <div class="r31">5</div>
+                                </div>
+                                <div class="circle">
+                                    <div class="r32">7</div>
+                                </div>
+                                <div class="circle active">
+                                    <div class="r33">4</div>
                                 </div>
                                 <div class="circle">
                                     <div class="r34">7</div>
                                 </div>
-                                <div class="circle active">
-                                    <div class="r35">4</div>
-                                </div>
                                 <div class="circle">
-                                    <div class="r36">7</div>
-                                </div>
-                                <div class="circle">
-                                    <div class="r37">2</div>
+                                    <div class="r35">2</div>
                                 </div>
                             </div>
                             <div class="row">
@@ -198,28 +201,28 @@
                             </div>
                             <div class="row">
                                 <div class="circle">
-                                    <div>1</div>
+                                    <div class="r41">1</div>
                                 </div>
                                 <div class="circle">
-                                    <div>2</div>
+                                    <div class="r42">2</div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="circle square">
-                                    <div>3</div>
+                                    <div class="r51">3</div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="circle">
-                                    <div>5</div>
+                                    <div class="r61">5</div>
                                 </div>
                                 <div class="circle">
-                                    <div>4</div>
+                                    <div class="r62">4</div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="circle square">
-                                    <div>9</div>
+                                    <div class="r71">9</div>
                                 </div>
                             </div>
                         </div>
