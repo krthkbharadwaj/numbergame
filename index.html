@@ -104,6 +104,24 @@
             $('.r71').text(h[0]);
 
             $('.uc').text(d[2]);
+            $('.destiny').text(d[2]);
+            $('.strength').text(c[1]);
+            $('.weakness').text(c[0]);
+
+            var strength = await recursive([d[3] + d[4]]),
+                weakness = await recursive([d[0] + d[1]]);
+
+            $('.inbornstrength').text(strength);
+            $('.challenge').text(weakness);
+
+            var intuition = await recursive([b[1] + b[2]]),
+                potential = await recursive([b[0] + b[3]]);
+            potential = await recursive([potential + d[2]]);
+
+            $('.intuition').text(intuition);
+            $('.potential').text(potential);
+
+            console.log(strength + " - " + weakness);
 
             $('.uc-profile-' + d[2] + ', .uc-' + d[2] + '-personality, .star' + d[2]).show();
         });
@@ -232,7 +250,7 @@
                         <div class="chart-list">
                             <div class="row">
                                 <div class="col-10"><span>Destiny trait</span></div>
-                                <div class="col-2"></div>
+                                <div class="col-2 text-center"><span class="destiny"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-10"><span>Universal Character Trait</span></div>
@@ -240,27 +258,27 @@
                             </div>
                             <div class="row">
                                 <div class="col-10"><span>Personality EQ Strength Trait</span></div>
-                                <div class="col-2"></div>
+                                <div class="col-2 text-center"><span class="strength"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-10"><span>Personality EQ Weakness Trait</span></div>
-                                <div class="col-2"></div>
+                                <div class="col-2 text-center"><span class="weakness"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-10"><span>Whole Life Inborn Strength Trait</span></div>
-                                <div class="col-2"></div>
+                                <div class="col-2 text-center"><span class="inbornstrength"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-10"><span>Whole Life Inborn Challenge Trait</span></div>
-                                <div class="col-2"></div>
+                                <div class="col-2 text-center"><span class="challenge"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-10"><span>Intuition Trait</span></div>
-                                <div class="col-2"></div>
+                                <div class="col-2 text-center"><span class="intuition"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-10"><span>Hidden potential trait</span></div>
-                                <div class="col-2"></div>
+                                <div class="col-2 text-center"><span class="potential"></span></div>
                             </div>
                         </div>
                     </div>
