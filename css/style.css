@@ -275,7 +275,7 @@ section.footer p {
 
 img.star-chart {
     width: 50%;
-    margin: 20px auto;
+    margin: 0 auto;
     height: 50%;
 }
 
@@ -298,4 +298,11 @@ img.star-chart {
 .container5 h2,
 .container6 h2 {
     margin-bottom: 3.5rem;
+}
+
+.personlogo {
+    width: auto;
+    height: 270px;
+    margin-top: 38%;
+    margin-left: 12%;
 }
