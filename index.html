@@ -74,6 +74,7 @@
             h = await recursive([g[0] + g[1]]);
 
             // console.log(a + " - " + b + " - " + c + " - " + d + " - " + e + " - " + f + " - " + g + " - " + h);
+            console.log(b.join(" "));
             $('.r11').text(b[0]);
             $('.r12').text(b[1]);
             $('.r13').text(b[2]);
@@ -104,15 +105,15 @@
             $('.r71').text(h[0]);
 
             $('.uc').text(d[2]);
-            $('.destiny').text(d[2]);
+            $('.destiny').text(b.join(" "));
             $('.strength').text(c[1]);
             $('.weakness').text(c[0]);
 
             var strength = await recursive([d[3] + d[4]]),
                 weakness = await recursive([d[0] + d[1]]);
 
-            $('.inbornstrength').text(strength);
-            $('.challenge').text(weakness);
+            $('.inbornstrength').text(d[3] + " " + d[4]);
+            $('.challenge').text(d[0] + " " + d[1]);
 
             var intuition = await recursive([b[1] + b[2]]),
                 potential = await recursive([b[0] + b[3]]);
@@ -147,7 +148,7 @@
             </section>
             <section class="content">
                 <h3>Your Personal Profiling UCMHP Chart</h3>
-                <div class="row">
+                <div class="row maincontent">
                     <div class="chart-date-list">
                         <div class="chart-date">
                             <div class="row">
@@ -284,7 +285,33 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
+                    <img src="images/Report/uc1_star.jpg" alt="star" class="star-chart star1" />
+                    <img src="images/Report/uc2_star.jpg" alt="star" class="star-chart star2" />
+                    <img src="images/Report/uc3_star.jpg" alt="star" class="star-chart star3" />
+                    <img src="images/Report/uc4_star.jpg" alt="star" class="star-chart star4" />
+                    <img src="images/Report/uc5_star.jpg" alt="star" class="star-chart star5" />
+                    <img src="images/Report/uc6_star.jpg" alt="star" class="star-chart star6" />
+                    <img src="images/Report/uc7_star.jpg" alt="star" class="star-chart star7" />
+                    <img src="images/Report/uc8_star.jpg" alt="star" class="star-chart star8" />
+                    <img src="images/Report/uc9_star.jpg" alt="star" class="star-chart star9" />
+                </div> -->
+            </section>
+            <section class="footer">
+                <img src="images/logo.png" alt="logo" class="academy-logo">
+                <p>© Copyright 2018 UCMHP Academy Pte Ltd | All Rights Reserved</p>
+            </section>
+        </div>
+        <img src="images/Background2.png" alt="bckgound" class="bg">
+    </div>
+    <div class="container containerx">
+        <div class="academy-details academy-details-chart">
+            <section class="logo">
+                <img src="images/logo.png" alt="logo" class="academy-logo">
+            </section>
+            <section class="content">
+                <h3>Your Personal Profiling UCMHP Chart</h3>
+                <div class="row maincontent">
                     <img src="images/Report/uc1_star.jpg" alt="star" class="star-chart star1" />
                     <img src="images/Report/uc2_star.jpg" alt="star" class="star-chart star2" />
                     <img src="images/Report/uc3_star.jpg" alt="star" class="star-chart star3" />
@@ -310,137 +337,131 @@
             </section>
             <section class="content">
                 <div class="col-12 text-center uc-profile uc-profile-1">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
                     <div>
-                        <p>
-                            Born an extrovert leader, a director. Physically, a UCM type 1 is good looking with a charismatic personality and lots of feelings and emotions. Inherently, a born leader who is persistent and can connect with others, commands authority and guided by
-                            a spirit of righteousness. </p>
-                        <p> UCM type 1 have a tendency to be compassionate, sympathetic, kind, affectionate, friendly, and cooperative. Suspicious and antagonistic is not in their nature. Other traits will include trustworthiness, altruism, modesty, tender-mindedness
+                        <p>Born an extrovert leader, a director. Physically, you are good looking with a charismatic personality and lots of feelings and emotions. Inherently, a born leader who is persistent and can connect with others, commands authority
+                            and guided by a spirit of righteousness. </p>
+                        <p> You have a tendency to be compassionate, sympathetic, kind, affectionate, friendly, and cooperative. Suspicious and antagonistic is not in your nature. Other traits will include trustworthiness, altruism, modesty, tender-mindedness
                             and straightforwardness and will thus attract backstabbers. </p>
-
-                        <p>UCM Type 1 is that he is a master of wisdom, and has a flair in acquiring wisdom, he likes to explore new venture and always want to be first in whatever they do. </p>
-                        <p>UCM Type 1 also has strong analytical powers and is a person who goes into detail on all matters and also possesses strong creativity. Keep in mind that such creativeness and mindfulness when activated, leads to success for the
-                            person. They are likely to be married after age of 28 and are charismatic and good looking. If they have digestive problem, they are likely to be overweight.
+                        <p>You are a master of wisdom, and has a flair in acquiring wisdom, likes to explore new venture and always want to be first in whatever you do. </p>
+                        <p>Also has strong analytical powers and is a person who goes into detail on all matters and also possesses strong creativity. Keep in mind that such creativeness and mindfulness when activated, leads to success for the person. You
+                            are likely to be married after age of 28 and are charismatic and good looking. If you have digestive problem, you are likely to be overweight.
                         </p>
 
                     </div>
                 </div>
                 <div class="col-12 text-center uc-profile uc-profile-2">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
-                    <p>
-                        Born an extrovert strategist and a good communicator, type 2 tends to have more conventional, traditional interests. They are plain, and straightforward, rather than complex, ambiguous, and subtle. They make a living through the verbal medium. </p>
-                    <p>They are gifted with the gift of the gap and excel in verbal communication. They usually make very good sales personnel and can sing very well if they choose to do so, they may regard the arts and sciences with caution or even view
-                        these endeavors as uninteresting. Usually they are skillful with a pleasant personality but emotional, thus if they are upsets, they can cry a lot. They are friendly with a calm disposition.
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
+                    <p>Born an extrovert strategist and a good communicator, tend to have more conventional, traditional interests. You are plain, and straightforward, rather than complex, ambiguous, and subtle. You make a living through the verbal medium.
                     </p>
-                    <p>Type 2 is a stickler for tidiness and very fastidious about hygiene. A very hardworking person and mature in thought. They have a tendency to mix with the older generation. He listens to what others have to say but may not follow the
-                        advice given. Given a task, this person has the ability to direct and complete with success. This person is usually good in P.R. work. </p>
-                    <p>Achievement in life comes to them only after the age of 45 years of age. The other bad side would be the person attracts a lot of 'bad mouthing' because this person loves to carry tales, cannot keep secret and a very stubborn person
-                        at times.
+                    <p>You are gifted with the gift of the gap and excel in verbal communication. You usually make very good sales personnel and can sing very well if You choose to do so, you may regard the arts and sciences with caution or even view these
+                        endeavors as uninteresting. Usually you are skillful with a pleasant personality but emotional, thus if you are upset, you can cry a lot. You are friendly with a calm disposition.
+                    </p>
+                    <p>You are a stickler for tidiness and very fastidious about hygiene. A very hardworking person and mature in thought. You have a tendency to mix with the older generation. He listens to what others have to say but may not follow the
+                        advice given. Given a task, this person has the ability to direct and complete with success. You are usually good in P.R. work. </p>
+                    <p>Achievement in life comes to them only after the age of 45 years of age. The other bad side would be the person attracts a lot of 'bad mouthing' because you love to carry tales, cannot keep secret and a very stubborn person at times.
                     </p>
 
                 </div>
                 <div class="col-12 text-center uc-profile uc-profile-3">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
                     <p>
-                        Born an extrovert individual, a happy go lucky person, UCM TYPE 3 are a very good listener and are active, loves sports, forward looking and very clear focused person who knows exactly what they want out of life. They are able to differentiate the good
-                        and the bad and have inherent ability and talent.
+                        Born an extrovert individual, a happy go lucky person, you are a very good listener and are active, loves sports, forward looking and very clear focused person who knows exactly what You want out of life. You are able to differentiate the good and the
+                        bad and have inherent ability and talent.
                     </p>
-                    <p> UCM Type 3 is characterized by positive emotions, a sense of urgency, and a tendency to seek out stimulation and the company of others. Their special trait is marked by pronounced engagement with the external world. They naturally
-                        enjoy being with people, and are often perceived as highly energetic and tend to be enthusiastic. They are action-oriented individuals with a “Yes!" or "Let's go!" attitude pertaining to opportunities for excitement. In groups
-                        they like to talk, assert themselves, and draw attention to themselves and be the livewire of the party. They have the ability to be rich and prosperous. The negative side would be aggressiveness, impatience, have a quick but short
-                        temper and is likely to marry at a young age (below 28 years old).
+                    <p> You are characterized by positive emotions, a sense of urgency, and a tendency to seek out stimulation and the company of others. Your special trait is marked by pronounced engagement with the external world. You naturally enjoy being
+                        with people, and are often perceived as highly energetic and tend to be enthusiastic. You are action-oriented individuals with a “Yes!" or "Let's go!" attitude pertaining to opportunities for excitement. In groups you like to talk,
+                        assert themselves, and draw attention to themselves and be the livewire of the party. You have the ability to be rich and prosperous. The negative side would be aggressiveness, impatience, have a quick but short temper and is likely
+                        to marry at a young age (below 28 years old).
                     </p>
-                    <p> They are likely very good looking during their younger days and are likely to be overweight later in their live because majority of them are meat eater and are likely to suffer from digestive and heart problem. This person can take
-                        things lightly and may not be firmly grounded. They also tend to be mischievous at times. Their speech can be blunt and there are ups and downs in a relationship. If such relationships are not handled well, it may have a disastrous
-                        effect.
+                    <p> You are likely very good looking during your younger days and are likely to be overweight later in your live because majority of them are meat eater and are likely to suffer from digestive and heart problem. You can take things lightly
+                        and may not be firmly grounded. You also tend to be mischievous at times. Your speech can be blunt and there are ups and downs in a relationship. If such relationships are not handled well, it may have a disastrous effect.
                     </p>
 
                 </div>
                 <div class="col-12 text-center uc-profile uc-profile-4">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
                     <p>
-                        UCMHP type 4, are born as extroverted leaders and learned individuals. They have in-born leadership qualities, everything they do is always based on laws and directives. They usually excel in exams. They are meticulous, calculative, systematic and able
-                        to start system for people to follow.
+                        You are born as extroverted leaders and learned individuals. You have in-born leadership qualities, everything you do is always based on laws and directives. You usually excel in exams. You are meticulous, calculative, systematic and able to start system
+                        for people to follow.
                     </p>
-                    <p>They are independent and trustworthy where work is concerned and are generally easy to get along in general. Compassionate and charismatic, they are out going and love to travel. They usually lead a carefree lifestyle. They are capable
-                        people from a very young age and are street smart as well. If the person is a lady, she is the "pampering" type, and good in public relations with a friendly disposition. This person bounces back fast after she encounter any type
-                        of failure in life.
+                    <p>You are independent and trustworthy where work is concerned and are generally easy to get along in general. Compassionate and charismatic, you are out going and love to travel. You usually lead a carefree lifestyle. You are capable
+                        people from a very young age and are street smart as well. If the person is a lady, she is the "pampering" type, and good in public relations with a friendly disposition. You bounce back fast after she encounter any type of failure
+                        in life.
                     </p>
-                    <p> A UCMHP type 4 is weak in accumulating wealth and has to be caution in relationships or marriage, otherwise it may result in awkward situations. They usually keep a very low profile about their personal life and are discreet unless
-                        the person they are talking to is a very close friend. They are either good cooks and/or love eating good food and are usually very hands-on people.
+                    <p> You are weak in accumulating wealth and has to be caution in relationships or marriage, otherwise it may result in awkward situations. You usually keep a very low profile about your personal life and are discreet unless the person
+                        you are talking to is a very close friend. You are either good cooks and/or love eating good food and are usually very hands-on people.
                     </p>
-                    <p> They like to look nice and are very systematic in whatever they do. Always a perfectionist at work and are very thorough with facts, figures and logic. They usually are knowledgeable and know what they are talking about. UCMHP type
-                        4 enjoys singing their own praises and like to listen to only good things about themselves.
+                    <p> You like to look nice and are very systematic in whatever you do. Always a perfectionist at work and are very thorough with facts, figures and logic. You usually are knowledgeable and know what you are talking about. You enjoy singing
+                        your own praises and like to listen to only good things about themselves.
                     </p>
 
                 </div>
                 <div class="col-12 text-center uc-profile uc-profile-5">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
                     <p>
-                        UCMHP type 5 is a born builder or architect of any organization, they behave more than a leader, and they are born in between an extrovert and an introvert. They may be very unpredictable and extreme in nature in terms of personality and character. They
-                        can either be the best or the worst in whatever they are into.
+                        You are born builder or architect of any organization, you behave more than a leader, and you are born in between an extrovert and an introvert. You may be very unpredictable and extreme in nature in terms of personality and character. You can either
+                        be the best or the worst in whatever you are into.
                     </p>
-                    <p>They have a very strong character, born with strong leadership, more than a commander who strongly believes in his/her own principle. They are highly unlikely to stay as a clerk or perform administrative work. Although charismatic
-                        and blends well with people, they observe tradition as well. Hence, they are usually in a position above many. If their weakness is also a type 5, they may not bother about traditions.
+                    <p>You have a very strong character, born with strong leadership, more than a commander who strongly believes in his/her own principle. You are highly unlikely to stay as a clerk or perform administrative work. Although charismatic and
+                        blends well with people, you observe tradition as well. Hence, you are usually in a position above many. If your weakness is also a type 5, you may not bother about traditions.
                     </p>
-                    <p> A UCMHP type 5 has a strong instinct. He/she is very vocal and arrogant when they speak but soft hearted at times. For men they are usually stout physically (80%), as for women, they are usually petite, only 20% of men or women are
-                        medium build. They are very hardworking and will achieve success in the later part of their life. The individual is also a realistic person and firm in his/her believes, and he/she is not a dreamer.
+                    <p> You have a strong instinct. He/she is very vocal and arrogant when you speak but soft hearted at times. For men you are usually stout physically (80%), as for women, you are usually petite, only 20% of men or women are medium build.
+                        You are very hardworking and will achieve success in the later part of your life. The individual is also a realistic person and firm in his/her believes, and he/she is not a dreamer.
                     </p>
-                    <p> If this UCMHP type 5 belongs to the lower strata and is poorer then this person is stubborn and hard-headed. If this happens, this UCMHP type 5 should relax and not nit picks on small issues. If relaxed on issues pertaining to principles
-                        and eradicate stubbornness, this person is will be respected by all.
+                    <p> You belong to the lower strata and is poorer then you are stubborn and hard-headed. If this happens, this UCMHP type 5 should relax and not nit picks on small issues. If relaxed on issues pertaining to principles and eradicate stubbornness,
+                        you will be respected by all.
                     </p>
 
                 </div>
                 <div class="col-12 text-center uc-profile uc-profile-6">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
                     <p>
-                        Born as an emotional and introvert leader, a UCMHP type 6 individual has an optimistic view of human nature in generally and they belong to the corporate world. They believe people are basically honest, decent, and trustworthy. A UCMHP type 6 has the
-                        tendency to be compassionate, cooperative with others and will take care of the people working as their subordinates
+                        Born as an emotional and introvert leader, individual has an optimistic view of human nature in generally and you belong to the corporate world. You believe people are basically honest, decent, and trustworthy. You have the tendency to be compassionate,
+                        cooperative with others and will take care of the people working as your subordinates
                     </p>
-                    <p> Their traits reflect individual differences for social harmony. As individuals, they generally get along well with others. The UCMHP type 6 is interested in people, they feel for others. They are generally soft hearted and make people
-                        feel at ease. They sympathize with others and will have high tendency to take time out for others. They are also interested in other people’s problems.
+                    <p> Your traits reflect individual differences for social harmony. As individuals, you generally get along well with others. You are interested in people, you feel for others. You are generally soft hearted and make people feel at ease.
+                        You sympathize with others and will have high tendency to take time out for others. You are also interested in other people’s problems.
                     </p>
-                    <p> They have concern for others, and are not likely to insult people. UCMHP type 6, is also a survival number, it controls wealth and prosperity and they will excel in the corporate world. Well mannered, charismatic and has high taste
-                        in life. They will do well in industries such as education, artistic works and religion.
+                    <p> You have concern for others, and are not likely to insult people. You are also a survival number, it controls wealth and prosperity and you will excel in the corporate world. Well mannered, charismatic and has high taste in life. You
+                        will do well in industries such as education, artistic works and religion.
                     </p>
 
                 </div>
                 <div class="col-12 text-center uc-profile uc-profile-7">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
                     <p>
-                        Born as an introvert entrepreneur, opportunist and innovator, a UCMHP type 7, is a very skilful person and have a high tendency to go into details when handling matters. This person never forgets those who have helped them before. The UCMHP type 7 appreciates
-                        gratitude and is a person full of passion and love.</p>
-                    <p> UCMHP type 7 people are a good communicator but argumentative at times and they know how to sway the topic and has a lot to say. They are able to twist and turn their way around especially with words. They tend to attract a lot of
-                        ‘bad mouthing’. They are also interested to go after fame and fortune.</p>
-                    <p> They are very good learners and is likely to start their own business and compete with their previous employers for projects and businesses. However, they can be very fickle minded, and they can change a decision very easily and quickly,
-                        often overnight. They tend to be not firm with their relationship with people which may lead to problems in marriage.
+                        Born as an introvert entrepreneur, opportunist and innovator, you are a very skilful person and have a high tendency to go into details when handling matters. You never forget those who have helped them before. You appreciate gratitude and full of passion
+                        and love.</p>
+                    <p> You are a good communicator but argumentative at times and you know how to sway the topic and has a lot to say. You are able to twist and turn your way around especially with words. You tend to attract a lot of ‘bad mouthing’. You
+                        are also interested to go after fame and fortune.</p>
+                    <p> You are very good learners and is likely to start your own business and compete with your previous employers for projects and businesses. However, you can be very fickle minded, and you can change a decision very easily and quickly,
+                        often overnight. You tend to be not firm with your relationship with people which may lead to problems in marriage.
                     </p>
 
                 </div>
                 <div class="col-12 text-center uc-profile uc-profile-8">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
                     <p>
-                        Born as an introvert with a strong career mind and responsible in her work. The UCMHP type 8 is also usually very quiet. They tend to choose only to talk to those people who they are comfortable with. They are generally conservative and passive in nature,
-                        but a lively person among their friends.
+                        Born as an introvert with a strong career mind and responsible in her work. You are also usually very quiet. You tend to choose only to talk to those people who you are comfortable with. You are generally conservative and passive in nature, but a lively
+                        person among your friends.
                     </p>
-                    <p>They are family oriented, very responsible, full of righteousness ideology and a trustworthy person as a friend. UCMHP type 8 feels comfortable to be where they are and they are unlikely to play a leading role in their organization
-                        or work place.
+                    <p>You are family oriented, very responsible, full of righteousness ideology and a trustworthy person as a friend. You feel comfortable to be where you are and you are unlikely to play a leading role in your organization or work place.
                     </p>
-                    <p> On the outside, the UCMHP type 8 looks tough but on the inside, the UCMHP type 8 is actually a soft hearted individual. As UCMHP type 8 individuals tend to be more careful and believe strongly in their own perspective, it unconsciously
-                        leads to loss of opportunities.
+                    <p> On the outside, the looks tough but on the inside, is actually a soft hearted individual. As a individuals tend to be more careful and believe strongly in your own perspective, it unconsciously leads to loss of opportunities.
                     </p>
 
                 </div>
                 <div class="col-12 text-center uc-profile uc-profile-9">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
-                    <p>Born as an introvert who belongs to the high society, UCMHP type 9, is very visual, optimistic and open minded. They also love to look nice and are very civilized, intelligent, cultured and sensitive. They know when and how to attack
-                        and when and how to defend.
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
+                    <p>Born as an introvert who belongs to the high society, very visual, optimistic and open minded. You also love to look nice and are very civilized, intelligent, cultured and sensitive. You know when and how to attack and when and how
+                        to defend.
                     </p>
-                    <p>They are very calculative and believed strongly in their own principles. They have a tendency to make very good consultants. They are gifted with a lot of business idea and opportunities to be wealthy in their life time. They are likely
-                        to have more than two properties throughout their life.
+                    <p>You are very calculative and believed strongly in your own principles. You have a tendency to make very good consultants. You are gifted with a lot of business idea and opportunities to be wealthy in your life time. You are likely
+                        to have more than two properties throughout your life.
                     </p>
-                    <p>They will never reinvent the wheels even though they are born to be very creative. They are good at winning one's heart. Do things very quickly and are capable with their work, however, the issues comes when one take a closer look
-                        at the details. They have the tendency to not take good care of their subordinates, but they do get along well with the management.
+                    <p>You will never reinvent the wheels even though you are born to be very creative. You are good at winning one's heart. Do things very quickly and are capable with your work, however, the issues comes when one take a closer look at the
+                        details. You have the tendency to not take good care of your subordinates, but you do get along well with the management.
                     </p>
                 </div>
             </section>
@@ -458,146 +479,144 @@
             </section>
             <section class="content">
                 <div class="col-12 text-center uc-profile2 uc-profile-1">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
                     <div>
-                        <p>UCM Type 1 individual values getting along with others and is concerned with general social harmony. They are generally considerate, generous, helpful, and willing to compromise their interests for others. They possess an optimistic
-                            view of human nature and will give credits for those who deserve them. They naturally believe people to be basically honest, decent, and trustworthy. This personality type is entertaining in social gatherings and has excellent
-                            interpersonal, influential and public relations skill. Being selfless people, they are interested in other people, feel for others and have a soft heart. They have a unique quality in making people feel at ease, sympathize,
-                            compassionate and empathies. They invest in taking time out for others, and are generally interested in other people’s problems, charitable and with their kind and altruistic demeanor do go out of their way to help people with
-                            love and tenderness in them. </p>
+                        <p>You have individual values getting along with others and is concerned with general social harmony. You are generally considerate, generous, helpful, and willing to compromise your interests for others. You possess an optimistic
+                            view of human nature and will give credits for those who deserve them. You naturally believe people to be basically honest, decent, and trustworthy. You are entertaining in social gatherings and has excellent interpersonal,
+                            influential and public relations skill. Being selfless people, you are interested in other people, feel for others and have a soft heart. You have a unique quality in making people feel at ease, sympathize, compassionate and
+                            empathies. You invest in taking time out for others, and are generally interested in other people’s problems, charitable and with your kind and altruistic demeanor do go out of your way to help people with love and tenderness
+                            in them. </p>
 
-                        <p>Type 1 person, when they put their fingers together, 80% of them have gaps in between their fingers.</p>
+                        <p>You are a person, when you put your fingers together, 80% of them have gaps in between your fingers.</p>
 
-                        <p>Seventy percent of their live is not smooth sailing. They are likely to be involved in a few relationship or career or business failures as they cannot focus and lack finishing touches or completion.</p>
+                        <p>Seventy percent of your live is not smooth sailing. You are likely to be involved in a few relationship or career or business failures as you cannot focus and lack finishing touches or completion.</p>
 
                     </div>
                 </div>
                 <div class="col-12 text-center uc-profile2 uc-profile-2">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
 
-                    <p>Type 2 people have a general appreciation for art, emotion, adventure, unusual ideas, imagination, and a curiosity for a variety of experiences. Type 2 are very emotional people and they can cry loudly. Type 2 symbolizes 2 matters
-                        or two things (Duality), it can mean 2 matters or things one has to decide, thus, indecisiveness is associates with 2. Another interpretation is usually you think first before you speak. Speech comes second. Thus 2 can be illustrated
-                        as talkative, a good speaker good communicator with the gift of the gap, A good singer, good presenter, good negotiation skills and vocal in most sense of the word and on a lighter note, two partners of the opposite sex are usually
-                        loving and 'soft' with one another. Type 2 is softhearted, can be cheated easily and the number is feminine.
+                    <p>You general appreciation for art, emotion, adventure, unusual ideas, imagination, and a curiosity for a variety of experiences. You are very emotional people and you can cry loudly. You symbolize 2 matters or two things (Duality),
+                        it can mean 2 matters or things one has to decide, thus, indecisiveness is associates with 2. Another interpretation is usually you think first before you speak. Speech comes second. Thus 2 can be illustrated as talkative, a good
+                        speaker good communicator with the gift of the gap, A good singer, good presenter, good negotiation skills and vocal in most sense of the word and on a lighter note, two partners of the opposite sex are usually loving and 'soft'
+                        with one another. Type 2 is softhearted, can be cheated easily and the number is feminine.
                     </p>
-                    <p> Type 2 is likely to have two affairs of the heart. It is good for them to be focus in a religion. The trait distinguishes imaginative people from down-to-earth, conventional people. People who are open to experience are intellectually
-                        curious, appreciative of art, and sensitive to beauty. They tend to be, compared to closed people, more creative and more aware of their feelings. They are more likely to hold unconventional beliefs. In their life, they are likely
-                        to be head hunted by their competitors or likely to compete with their previous employer for
+                    <p> You are likely to have two affairs of the heart. It is good for them to be focus in a religion. The trait distinguishes imaginative people from down-to-earth, conventional people. People who are open to experience are intellectually
+                        curious, appreciative of art, and sensitive to beauty. You tend to be, compared to closed people, more creative and more aware of your feelings. You are more likely to hold unconventional beliefs. In your life, you are likely to
+                        be head hunted by your competitors or likely to compete with your previous employer for
 
                     </p>
                 </div>
                 <div class="col-12 text-center uc-profile2 uc-profile-3">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
 
-                    <p>UCM Type 3 is usually talkative, aggressive, unrestrained confident, and socially bold. Being extroverted, their focus involves organization of people, which translates into supervision. Whilst Type Three enjoys organizing and mobilizing
-                        people according to their own theories and tactically based agendas, they are content to enforce "the rules," often dictated by tradition or handed down from a higher authority."
+                    <p>You are usually talkative, aggressive, unrestrained confident, and socially bold. Being extroverted, your focus involves organization of people, which translates into supervision. Whilst Type Three enjoys organizing and mobilizing
+                        people according to your own theories and tactically based agendas, you are content to enforce "the rules," often dictated by tradition or handed down from a higher authority."
                     </p>
-                    <p>UCM Type 3 is the life of the party they don't mind being the center of attention, feel comfortable around people. They have a tendency to start conversations and talk to a lot of different people at all levels from all walks of life
-                        and intermingle well at parties. 80% of type 3 person are meat eater and loved fried food. Type 3 has the tendency to seek out the company and is stimulated by others. Their trait is marked by pronounced engagement with the external
-                        world. They tend to be enthusiastic, action-oriented people and love excitement. In groups they enjoy talking and draw attention to themselves.
+                    <p>You are the life of the party you don't mind being the center of attention, feel comfortable around people. You have a tendency to start conversations and talk to a lot of different people at all levels from all walks of life and intermingle
+                        well at parties. 80% of type 3 person are meat eater and loved fried food. You have the tendency to seek out the company and is stimulated by others. Your trait is marked by pronounced engagement with the external world. You tend
+                        to be enthusiastic, action-oriented people and love excitement. In groups you enjoy talking and draw attention to themselves.
 
                     </p>
 
                 </div>
                 <div class="col-12 text-center uc-profile2 uc-profile-4">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
 
-                    <p>They are task oriented and are able to work independently and are always law abiding. If you accuse them of something without facts or figure, they will not hesitate to retaliate. They are usually good presenters and usually have a
-                        loud voice. As a UCMHP type 4 person, when they put their fingers together, 80% of them have gaps in between their fingers.
+                    <p>You are task oriented and are able to work independently and are always law abiding. If you accuse them of something without facts or figure, you will not hesitate to retaliate. You are usually good presenters and usually have a loud
+                        voice. As a person, when you put your fingers together, 80% of them have gaps in between your fingers.
                     </p>
-                    <p> They tend to protect the interest of the company and can get along very well with their bosses. They also have the tendency to show self-discipline, act dutifully, and aim for achievement. This trait shows a preference for planned
-                        rather than spontaneous behavior. They achieve high levels of success through purposeful planning and persistence. They are also regarded by their peers as responsible and reliable. They can become compulsive perfectionists and
-                        workaholics.
+                    <p> You tend to protect the interest of the company and can get along very well with your bosses. You also have the tendency to show self-discipline, act dutifully, and aim for achievement. This trait shows a preference for planned rather
+                        than spontaneous behavior. You achieve high levels of success through purposeful planning and persistence. You are also regarded by your peers as responsible and reliable. You can become compulsive perfectionists and workaholics.
                     </p>
-                    <p>They prefer to only just report to only one person. A very realistic person, calculative and very focused in their line of work. They are aware of their strengths and weaknesses very well. Whatever they do, they will want to know their
-                        benefit first before carrying out a task.
+                    <p>You prefer to only just report to only one person. A very realistic person, calculative and very focused in your line of work. You are aware of your strengths and weaknesses very well. Whatever you do, you will want to know your benefit
+                        first before carrying out a task.
                     </p>
-                    <p>A UCMHP type 4 is a person who is more conscientious and plans their work and practices self-discipline and will be more likely to succeed. These people are focused and are aware of the work that needs to get done and do it on time
-                        and in an efficient manner. Teachers would generally describe UCMHP type 4 students as responsible students. Their main weakness is they cannot accept defeat of any type.
+                    <p>You are more conscientious and plan your work and practices self-discipline and will be more likely to succeed. You are focused and are aware of the work that needs to get done and do it on time and in an efficient manner. Teachers
+                        would generally describe UCMHP type 4 students as responsible students. Your main weakness is you cannot accept defeat of any type.
 
                     </p>
 
                 </div>
                 <div class="col-12 text-center uc-profile2 uc-profile-5">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
 
-                    <p>There is a tendency to experience unpleasant and negative emotions easily, such as anger, anxiety, depression or impulsiveness. They are also more emotionally reactive and vulnerable to stress. It is sometimes called emotional instability
-                        by some. They are more likely to interpret ordinary situations as threatening, and minor frustrations as hopelessly difficult. Their negative emotional reactions tend to persist for unusually long periods of time, which means they
-                        can often be in a bad mood for a long time. Due to the issues in emotional instability they can be hampered on the ability to think clearly, make decisions, and cope effectively with stress.
+                    <p>There is a tendency to experience unpleasant and negative emotions easily, such as anger, anxiety, depression or impulsiveness. You are also more emotionally reactive and vulnerable to stress. It is sometimes called emotional instability
+                        by some. You are more likely to interpret ordinary situations as threatening, and minor frustrations as hopelessly difficult. Your negative emotional reactions tend to persist for unusually long periods of time, which means you
+                        can often be in a bad mood for a long time. Due to the issues in emotional instability you can be hampered on the ability to think clearly, make decisions, and cope effectively with stress.
                     </p>
-                    <p>UCMHP type 5, are easily disturbed, change their mood a lot get irritated easily, and get stressed out easily. They have frequent mood swings, often feel blue, worry about things and are not relaxed most of the time. In a learning
-                        environment, a UCMHP type 5 people have a harder time adjusting to stressful situations. When presented with a difficult situation or a problem that they don't know how to figure the way out. They may just break down rather than
-                        handling the situation.
+                    <p>You are easily disturbed, change your mood a lot get irritated easily, and get stressed out easily. You have frequent mood swings, often feel blue, worry about things and are not relaxed most of the time. In a learning environment,
+                        you have a harder time adjusting to stressful situations. When presented with a difficult situation or a problem that you don't know how to figure the way out. You may just break down rather than handling the situation.
                     </p>
-                    <p>They also get angry easily and yet they may not even know what they are angry about and it could be targeted at, themselves, the homework, the teacher, etc. A UCMHP type 5 may experience a rush of energy that some may consider the
-                        optimal state. They have the tendency to push themselves hard to reach goals of all types, and UCMHP type 5 people will expect others to do the same. However, one must learn to restrain the interest in order to get the maximum
-                        results for the efforts. They generally cannot accept big failures in life and will find it difficult to make a comeback. If they are involved in gambling or drugs, they will find it very hard to kick the habits.
+                    <p>You also get angry easily and yet you may not even know what you are angry about and it could be targeted at, themselves, the homework, the teacher, etc. You may experience a rush of energy that some may consider the optimal state.
+                        You have the tendency to push themselves hard to reach goals of all types, and you will expect others to do the same. However, one must learn to restrain the interest in order to get the maximum results for the efforts. You generally
+                        cannot accept big failures in life and will find it difficult to make a comeback. If you are involved in gambling or drugs, you will find it very hard to kick the habits.
 
                     </p>
 
                 </div>
                 <div class="col-12 text-center uc-profile2 uc-profile-6">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
 
-                    <p>A UCMHP type 6 can be a popular figure in society. The negative side is that they are proud in nature and usually does not take on simple tasks. They do not like to listen to others especially their superiors, but they are likely to
-                        look after their subordinates. A UCMHP type 6 have traits such as sympathetic, kind, affectionate, trustworthy, straightforward, compliance, and modest.
+                    <p>You can be a popular figure in society. The negative side is that you are proud in nature and usually does not take on simple tasks. You do not like to listen to others especially your superiors, but you are likely to look after your
+                        subordinates. You have traits such as sympathetic, kind, affectionate, trustworthy, straightforward, compliance, and modest.
                     </p>
-                    <p> A UCMHP type 6 prefers to be friendly, and cooperative rather than being suspicious and antagonistic towards others. They are usually willing to compromise their interests for the benefit of others. They are family oriented. If the
-                        UCMHP type 6 is a woman, they are very clear with their accounts and they tend to want to be in control over others.
+                    <p> You prefer to be friendly, and cooperative rather than being suspicious and antagonistic towards others. You are usually willing to compromise your interests for the benefit of others. You are family oriented. If the UCMHP type 6 is
+                        a woman, you are very clear with your accounts and you tend to want to be in control over others.
                     </p>
-                    <p> As for men, they tend to unclear in their personal accounts. Both genders love to look nice, love money and likely to go for branded products. They are usually good looking and charismatic even into their older ages, they will attract
-                        the opposite sex a lot. If your daughter is a UCMHP type 6, they usually can be very naïve, easy going and can be cheated by sweet words and promises, so train them to be more street smart.
+                    <p> As for men, you tend to unclear in your personal accounts. Both genders love to look nice, love money and likely to go for branded products. You are usually good looking and charismatic even into your older ages, you will attract the
+                        opposite sex a lot. If your daughter is a UCMHP type 6, you usually can be very naïve, easy going and can be cheated by sweet words and promises, so train them to be more street smart.
 
                     </p>
 
                 </div>
                 <div class="col-12 text-center uc-profile2 uc-profile-7">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
 
-                    <p>A UCMHP type 7 is very domineering and always prefer to have bigger share in whatever they want to do. They are usually pampered, born as commanders, and will usually hold important positions in their company. They are usually innovative
-                        and are enterprising with whatever they are doing. They are also very good in trouble shooting and is a fantastic problem solver.
+                    <p>You are very domineering and always prefer to have bigger share in whatever you want to do. You are usually pampered, born as commanders, and will usually hold important positions in your company. You are usually innovative and are
+                        enterprising with whatever you are doing. You are also very good in trouble shooting and is a fantastic problem solver.
                     </p>
-                    <p> As a dreamer, they tend to get involved in a few businesses or a few types of work at the same time and they can multi task between them. Being an entrepreneur, their energy comes from pushing boundaries and taking things to the next
-                        level. However, they tend to get bored quickly and draw to variety.
+                    <p> As a dreamer, you tend to get involved in a few businesses or a few types of work at the same time and you can multi task between them. Being an entrepreneur, your energy comes from pushing boundaries and taking things to the next
+                        level. However, you tend to get bored quickly and draw to variety.
                     </p>
-                    <p> When things are fresh and exciting, they tend to experience a rush of energy that some consider the optimal state of mind. They have a tendency to push themselves hard to reach goals of all types, and they will expect the others to
-                        do the same. A UCMHP type 7 person likes to eat seafood and dislike one particular type of seafood.
+                    <p> When things are fresh and exciting, you tend to experience a rush of energy that some consider the optimal state of mind. You have a tendency to push themselves hard to reach goals of all types, and you will expect the others to do
+                        the same. You like to eat seafood and dislike one particular type of seafood.
                     </p>
-                    <p>They do have the tendency to perspire easily especially while eating. A UCMHP type 7, when they put their fingers together, 80% of them have gaps in between their fingers. UCMHP type 7 is highly likely to hold unconventional beliefs
-                        and throughout their career life time, they are likely to be head hunted by their competitors or likely to compete with their previous employer for future businesses. Some people might even call them ‘betrayal’.
+                    <p>You do have the tendency to perspire easily especially while eating. When you put your fingers together, 80% of them have gaps in between your fingers. You are highly likely to hold unconventional beliefs and throughout your career
+                        life time, you are likely to be head hunted by your competitors or likely to compete with your previous employer for future businesses. Some people might even call them ‘betrayal’.
                     </p>
 
                 </div>
                 <div class="col-12 text-center uc-profile2 uc-profile-8">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
 
-                    <p>UCMHP type 8 men are usually responsible people and they will generally make good husbands. As an introvert, UCMHP type 8 lacks the social exuberance and activity levels of their extrovert counterparts. They tend to seem quiet, low-key,
-                        deliberate, and less involved in the social world.
+                    <p>You are usually responsible and you will generally make a good husbands. As an introvert, you lack the social exuberance and activity levels of your extrovert counterparts. You tend to seem quiet, low-key, deliberate, and less involved
+                        in the social world.
                     </p>
-                    <p>Their lack of social involvement should not be interpreted as shyness or depression. They simply need less stimulation than extroverts and more time alone. They may be very active and energetic, but it need not be socially. 80% of
-                        type 8 person are meat-lovers. Although UCMHP type 8 are introverts, they do not mind to be the center of attention at times when they are with people that they know.
+                    <p>Your lack of social involvement should not be interpreted as shyness or depression. You simply need less stimulation than extroverts and more time alone. You may be very active and energetic, but it need not be socially. 80% of type
+                        8 person are meat-lovers. Although you are introvert, you do not mind to be the center of attention at times when you are with people that you know.
                     </p>
-                    <p> When they start to feel more comfortable around people, and are able to start conversations, with a lots of different people at parties because of their sociable nature. UCMHP type 8 also has the tendency to seek out the company and
-                        stimulation of others.
+                    <p> When you start to feel more comfortable around people, and are able to start conversations, with a lots of different people at parties because of your sociable nature. You also have the tendency to seek out the company and stimulation
+                        of others.
 
                     </p>
 
                 </div>
                 <div class="col-12 text-center uc-profile2 uc-profile-9">
-                    <h2 class="mt-5 text-center">Your Personal Profile</h2>
+                    <h2 class="mt-5 text-center">YOUR PERSONAL PROFILE</h2>
                     <p>
-                        Portrayed as tough man and woman, but they are actually soft hearted and mild tempered. UCMHP type 9 is usually an emotional person, with not many friends, and have the tendency to be lonely in the later part of life. Luck comes during the middle age,
-                        around 35 years old and above.
+                        Portrayed as tough man and woman, but you are actually soft hearted and mild tempered. You are usually an emotional person, with not many friends, and have the tendency to be lonely in the later part of life. Luck comes during the middle age, around 35
+                        years old and above.
                     </p>
-                    <p> UCMHP type 9 has a tendency to show self-discipline, act dutifully, and aim for achievement. There is a preference for planned rather than spontaneous behaviour. They are always competent, organized and a good planner. UCMHP type 9,
-                        is always prepared, follow a schedule, and get chores done right away. They also like to pay attention to details, and they seldom do not leave belongings around and make a mess of things. They are meticulous and always put things
-                        back in their proper place.
+                    <p> You have a tendency to show self-discipline, act dutifully, and aim for achievement. There is a preference for planned rather than spontaneous behaviour. You are always competent, organized and a good planner. You are always prepared,
+                        follow a schedule, and get chores done right away. You also like to pay attention to details, and you seldom do not leave belongings around and make a mess of things. You are meticulous and always put things back in your proper
+                        place.
                     </p>
-                    <p>They never compromise on duties. One of the tendencies of UCMHP type 9 is their creativeness, and through their creativity, they can put together ideas and integrate them into one great idea. They are also regarded by others as responsible
-                        and reliable. They have the tendency to become compulsive perfectionists and workaholics.
+                    <p>You never compromise on duties. One of the tendencies is your creativeness, and through your creativity, you can put together ideas and integrate them into one great idea. You are also regarded by others as responsible and reliable.
+                        You have the tendency to become compulsive perfectionists and workaholics.
                     </p>
-                    <p>UCMHP type 9 are generally focused and aware of the work that needs to get done and will do them in a timely and efficient manner. Teachers would generally describe UCMHP type 9 students as the responsible students. Appearances are
-                        important to them. They like to keep things and love quiet environment. They can be greedy and lonely and they know it.
+                    <p>You are generally focused and aware of the work that needs to get done and will do them in a timely and efficient manner. Teachers would generally describe UCMHP type 9 students as the responsible students. Appearances are important
+                        to them. You like to keep things and love quiet environment. You can be greedy, lonely and you know it.
                     </p>
                 </div>
             </section>
@@ -880,7 +899,7 @@
                             <img src="images/Report/Raymond.jpg" alt="logo" class="academy-logo">
                         </div>
                         <div class="col-9 text"> <span>
-                                            Raymond Albert "Ray" Kroc (October 5, 1902 – January 14, 1984) was an American fast-food tycoon.[4][5] He joined the California company McDonald's in 1954, after the McDonald brothers had franchised 6 locations out from their original 1940 operation in San Bernardino. This set the stage for national expansion with the help of Kroc, eventually leading to a global franchise, making it the most successful fast food corporation in the world. Kroc was included in Time 100: The Most Important People of the Century, and amassed a fortune during his lifetime. He owned the San Diego Padres baseball team from 1974 until his death in 1984.
+                                            Raymond Albert "Ray" Kroc (October 5, 1902 – January 14, 1984) was an American fast-food tycoon.[4][5] He joined the California company McDonald's in 1954, after the McDonald brothers had franchised 6 locations out from your original 1940 operation in San Bernardino. This set the stage for national expansion with the help of Kroc, eventually leading to a global franchise, making it the most successful fast food corporation in the world. Kroc was included in Time 100: The Most Important People of the Century, and amassed a fortune during his lifetime. He owned the San Diego Padres baseball team from 1974 until his death in 1984.
                                         </span>
                         </div>
                     </div>
@@ -909,7 +928,7 @@
                 <img src="images/logo.png" alt="logo" class="academy-logo">
             </section>
             <section class="content contact-details">
-                <h2>Call us today for more information and appointments</h2>
+                <h2>CALL US TODAY FOR MORE INFORMATION AND APPOINTMENTS</h2>
                 <br/>
                 <p>16 Arumugam Road, LTC Building Blk D, #05-02, Singapore 409961</p><br/>
                 <p><span class="glyphicon glyphicon-earphone" aria-hidden="true">Phone: </span>+65 6748 6279</p>

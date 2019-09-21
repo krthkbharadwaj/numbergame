@@ -281,7 +281,7 @@ img.star-chart {
 
 .chart-list .row div {
     border-right: 2px solid #000000 !important;
-    padding: 12px 15px !important;
+    padding: 12px 12px !important;
 }
 
 
@@ -305,4 +305,8 @@ img.star-chart {
     height: 270px;
     margin-top: 30%;
     margin-left: 12%;
+}
+
+.maincontent {
+    margin-top: 10% !important;
 }
