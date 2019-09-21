@@ -312,5 +312,5 @@ img.star-chart {
 }
 
 .chart-list {
-    margin-top: 8%;
+    margin-top: 8% !important;
 }
